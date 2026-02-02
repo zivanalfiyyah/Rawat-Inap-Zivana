@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+
+body{
+    min-height:100vh;
+    background:radial-gradient(circle at bottom,#2e005f,#0b001f);
+    overflow-x:hidden;
+    color:#fff;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url('https://cdn.pixabay.com/photo/2020/02/23/17/59/landscape-4876811_1280.png')
+    no-repeat center/cover;
+    opacity:0.65;
+    z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    padding:12px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(6px);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10;
+}
+
+.navbar h1{
+    font-size:20px;
+    font-weight:600;
+    color:#fff;
+    text-shadow:0 0 12px #c18aff;
+}
+
+.nav-links a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ffb7ff;
+    text-shadow:0 0 8px #e2aaff;
+}
+
+/* ================= FORM / BOX ================= */
+
+.box{
+    width:330px; /* diperkecil */
+    padding:30px;
+    border:2px solid rgba(255,255,255,0.2);
+    border-radius:18px;
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,0.1);
+    box-shadow:0 0 35px rgba(180,100,255,0.55);
+    margin:120px auto 60px;
+    animation:fadeInUp .8s ease forwards;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    text-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+
+/* ================= INPUT ================= */
+
+input, button, select, textarea{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:18px;
+    margin:6px 0;
+    outline:none;
+}
+
+input, select, textarea{
+    background:rgba(255,255,255,0.2);
+    color:#fff;
+    border:2px solid rgba(255,255,255,0.3);
+}
+
+input::placeholder{
+    color:#ddd;
+}
+
+input:focus, select:focus, textarea:focus{
+    background:rgba(255,255,255,0.3);
+    box-shadow:0 0 12px #b366ff;
+}
+
+/* ================= BUTTON ================= */
+
+button{
+    background:linear-gradient(85deg,#7f00ff,#e100ff);
+    color:#fff;
+    font-weight:500;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(190,100,255,0.6);
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px rgba(223,129,255,0.9);
+}
+
+.logout-btn{
+    background:linear-gradient(90deg,#ff4b2b,#ff416c);
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:70%; /* lebih compact */
+    margin:140px auto 40px;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.15);
+    border-radius:10px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(180,100,255,0.5);
+}
+
+td, th{
+    padding:8px;
+    border:1px solid rgba(255,255,255,0.25);
+}
+
+th{
+    background:rgba(255,255,255,0.2);
+    font-weight:600;
+    text-shadow:0 0 10px #e2aaff;
+}
+
+tr:hover td{
+    background:rgba(255,255,255,0.25);
+}
+
+/* ================= LINKS ================= */
+
+a.back{
+    display:inline-block;
+    margin-top:20px;
+    color:#ffb7ff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+a.back:hover{
+    color:#fff;
+    text-shadow:0 0 10px #ffb7ff;
+}
+
+/* ================= ERROR BOX ================= */
+
+.error{
+    background:rgba(255,0,0,0.3);
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeInUp{
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(0.96);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ================= STARS ================= */
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:0.3;
+        transform:scale(0.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+}
+/* ============================
+      TITLE & SUBTITLE
+============================ */
+.dash-title {
+    margin-top: 130px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+.dash-subtitle {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+
+/* ============================
+         WELCOME BOX
+============================ */
+.welcome-box {
+    width: 80%;
+    margin: 30px auto 40px;
+    padding: 25px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(200,120,255,0.45);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.welcome-box h3 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255,200,255,0.8);
+}
+
+.welcome-box p {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #eee;
+}
+
+
+/* ============================
+        STATISTIC CARDS
+============================ */
+.stat-container {
+    margin-top: 20px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(200,120,255,0.4);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 45px rgba(230,160,255,0.8);
+}
+
+.stat-card i {
+    font-size: 45px;
+    color: #ffd8ff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 12px rgba(255,170,255,0.9);
+}
+
+.stat-card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px #ffd8ff;
+}
+
+
+/* ============================
+           MENU CARDS
+============================ */
+.dashboard-container {
+    margin-top: 35px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    z-index: 2;
+}
+
+.menu-link {
+    text-decoration: none;
+}
+
+.menu-card {
+    padding: 25px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 30px rgba(200,120,255,0.4);
+    text-align: center;
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 0 45px rgba(235,155,255,0.9);
+}
+
+.menu-card i {
+    font-size: 50px;
+    margin-bottom: 12px;
+    color: #ffddff;
+    text-shadow: 0 0 12px rgba(255,170,255,0.9);
+}
+
+.menu-card h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 0 10px #ecc7ff;
+}
+
+
+/* ============================
+           ANIMATIONS
+============================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
